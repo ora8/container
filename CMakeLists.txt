@@ -27,6 +27,7 @@ set(CONTAINER_SOURCES
     src/str.c
     src/shared_ptr.c
     src/bplus_tree.c
+    src/btree_file.c
 )
 
 # Quelldateien für die beiden Programme definieren
@@ -58,6 +59,10 @@ set(BPLUS_TREE_TEST_SOURCES
     src/bplus_tree_test/main.c
 )
 
+set(BTREE_FILE_TEST_SOURCES
+    src/btree_file_test/main.c
+)
+
 # Erstes ausführbares Programm erstellen
 add_executable(hash_test ${CONTAINER_SOURCES} ${HASH_TEST_SOURCES})
 
@@ -78,6 +83,9 @@ add_executable(shared_ptr_test ${CONTAINER_SOURCES} ${SHARED_PTR_TEST_SOURCES})
 
 # Siebtes ausführbares Programm erstellen
 add_executable(bplus_tree_test ${CONTAINER_SOURCES} ${BPLUS_TREE_TEST_SOURCES})
+
+# Achtes ausführbares Programm erstellen
+add_executable(btree_file_test ${CONTAINER_SOURCES} ${BTREE_FILE_TEST_SOURCES})
 
 # Debug- und Release-Konfigurationen
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
