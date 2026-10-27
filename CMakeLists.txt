@@ -23,8 +23,9 @@ set(CONTAINER_SOURCES
     src/hash.c
     src/vector.c
     src/string_view.c
-    src/reference.c
+    src/smart_ptr.c
     src/str.c
+    src/shared_ptr.c
 )
 
 # Quelldateien für die beiden Programme definieren
@@ -40,12 +41,16 @@ set(STRING_VIEW_TEST_SOURCES
     src/string_view_test/main.c
 )
 
-set(REFERNCE_TEST_SOURCES
-    src/reference_test/main.c
+set(SMART_PTR_TEST_SOURCES
+    src/smart_ptr_test/main.c
 )
 
 set(STRING_TEST_SOURCES
     src/str_test/main.c
+)
+
+set(SHARED_PTR_TEST_SOURCES
+    src/shared_ptr_test/main.c
 )
 
 # Erstes ausführbares Programm erstellen
@@ -58,10 +63,13 @@ add_executable(vector_test ${CONTAINER_SOURCES} ${VECTOR_TEST_SOURCES})
 add_executable(string_view_test ${CONTAINER_SOURCES} ${STRING_VIEW_TEST_SOURCES})
 
 # Viertes ausführbares Programm erstellen
-add_executable(reference_test ${CONTAINER_SOURCES} ${REFERNCE_TEST_SOURCES})
+add_executable(smart_ptr_test ${CONTAINER_SOURCES} ${SMART_PTR_TEST_SOURCES})
 
 # Fünftes ausführbares Programm erstellen
 add_executable(string_test ${CONTAINER_SOURCES} ${STRING_TEST_SOURCES})
+
+# Sechstes ausführbares Programm erstellen
+add_executable(shared_ptr_test ${CONTAINER_SOURCES} ${SHARED_PTR_TEST_SOURCES})
 
 # Debug- und Release-Konfigurationen
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
