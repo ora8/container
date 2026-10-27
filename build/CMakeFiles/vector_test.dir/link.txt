@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/vector_test.dir/link.d CMakeFiles/vector_test.dir/src/hash.c.o CMakeFiles/vector_test.dir/src/vector.c.o CMakeFiles/vector_test.dir/src/string_view.c.o CMakeFiles/vector_test.dir/src/vector_test/main.c.o -o vector_test

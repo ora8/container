@@ -1,0 +1,5 @@
+/home/urs-wagner/C/container/build/CMakeFiles/hash_test.dir
+/home/urs-wagner/C/container/build/CMakeFiles/vector_test.dir
+/home/urs-wagner/C/container/build/CMakeFiles/string_view_test.dir
+/home/urs-wagner/C/container/build/CMakeFiles/edit_cache.dir
+/home/urs-wagner/C/container/build/CMakeFiles/rebuild_cache.dir
