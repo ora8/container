@@ -26,6 +26,7 @@ set(CONTAINER_SOURCES
     src/smart_ptr.c
     src/str.c
     src/shared_ptr.c
+    src/bplus_tree.c
 )
 
 # Quelldateien für die beiden Programme definieren
@@ -53,6 +54,10 @@ set(SHARED_PTR_TEST_SOURCES
     src/shared_ptr_test/main.c
 )
 
+set(BPLUS_TREE_TEST_SOURCES
+    src/bplus_tree_test/main.c
+)
+
 # Erstes ausführbares Programm erstellen
 add_executable(hash_test ${CONTAINER_SOURCES} ${HASH_TEST_SOURCES})
 
@@ -70,6 +75,9 @@ add_executable(string_test ${CONTAINER_SOURCES} ${STRING_TEST_SOURCES})
 
 # Sechstes ausführbares Programm erstellen
 add_executable(shared_ptr_test ${CONTAINER_SOURCES} ${SHARED_PTR_TEST_SOURCES})
+
+# Siebtes ausführbares Programm erstellen
+add_executable(bplus_tree_test ${CONTAINER_SOURCES} ${BPLUS_TREE_TEST_SOURCES})
 
 # Debug- und Release-Konfigurationen
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
