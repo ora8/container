@@ -1,5 +1,5 @@
-#ifndef _STRING_VIEW_
-#define _STRING_VIEW_
+#ifndef STRING_VIEW
+#define STRING_VIEW
 
 #include <stddef.h>  // Für size_t
 #include <stdbool.h> // Für bool

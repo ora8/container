@@ -1,5 +1,5 @@
-#ifndef _vector_H_
-#define _vector_H_
+#ifndef VECTOR_H
+#define VECTOR_H
 
 #include <stdbool.h>
 #include <stddef.h>  // Für size_t
