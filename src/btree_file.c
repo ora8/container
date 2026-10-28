@@ -10,7 +10,8 @@
 // Hilfsfunktion: Liest einen Block aus der Datei
 static void read_block(FILE* file, int block_num, btree_node* node) {
     fseek(file, block_num * BLOCK_SIZE, SEEK_SET);
-    (void)fread(node, BLOCK_SIZE, 1, file);
+    size_t read = fread(node, BLOCK_SIZE, 1, file);
+    (void)read;
 }
 
 // Hilfsfunktion: Schreibt einen Block in die Datei
@@ -55,7 +56,8 @@ static int get_free_block(FILE* file, btree_meta_data* metadata) {
 // Hilfsfunktion: Liest die Metadaten aus der Datei
 static void read_metadata(FILE* file, btree_meta_data* metadata) {
     fseek(file, 0, SEEK_SET);
-    fread(metadata, sizeof(btree_meta_data), 1, file);
+    size_t read = fread(metadata, sizeof(btree_meta_data), 1, file);
+    (void)read;
 }
 
 // Hilfsfunktion: Schreibt die Metadaten in die Datei
@@ -244,16 +246,16 @@ static bool search_recursive(const btree_file* tree, int block_num, int key) {
     return search_recursive(tree, node.children[i], key);
 }
 
-// Hilfsfunktion: Finds the minimum key in a subtree (for deletion)
-static int find_min_key(btree_file* tree, int block_num) {
-    btree_node node;
-    read_block(tree->file, block_num, &node);
+// // Hilfsfunktion: Finds the minimum key in a subtree (for deletion)
+// static int find_min_key(btree_file* tree, int block_num) {
+//     btree_node node;
+//     read_block(tree->file, block_num, &node);
 
-    while (!node.is_leaf) {
-        read_block(tree->file, node.children[0], &node);
-    }
-    return node.keys[0];
-}
+//     while (!node.is_leaf) {
+//         read_block(tree->file, node.children[0], &node);
+//     }
+//     return node.keys[0];
+// }
 
 // Hilfsfunktion: Merges two nodes (for deletion)
 static void merge_nodes(btree_file* tree, btree_node* parent, int index, btree_node* left, btree_node* right) {
