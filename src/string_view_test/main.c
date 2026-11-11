@@ -43,7 +43,7 @@ size_t compare_test() {
     generate_random_string(buffer1, length);
     generate_random_string(buffer2, length);
 
-    string_view sv1 = string_view_from_cstr(buffer1);
+    string_view sv1 = string_view_from_cstr("buffer1");
     string_view sv2 = string_view_from_cstr(buffer2);
 
     if (!string_view_compare(&sv1, &sv2)) {

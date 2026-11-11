@@ -23,6 +23,7 @@ set(CONTAINER_SOURCES
     src/hash.c
     src/vector.c
     src/string_view.c
+    src/string_slice.c
     src/smart_ptr.c
     src/str.c
     src/shared_ptr.c
@@ -41,6 +42,10 @@ set(VECTOR_TEST_SOURCES
 
 set(STRING_VIEW_TEST_SOURCES
     src/string_view_test/main.c
+)
+
+set(STRING_SLICE_TEST_SOURCES
+    src/string_slice_test/main.c
 )
 
 set(SMART_PTR_TEST_SOURCES
@@ -71,6 +76,9 @@ add_executable(vector_test ${CONTAINER_SOURCES} ${VECTOR_TEST_SOURCES})
 
 # Drittes ausführbares Programm erstellen
 add_executable(string_view_test ${CONTAINER_SOURCES} ${STRING_VIEW_TEST_SOURCES})
+
+# Drittes ausführbares Programm erstellen
+add_executable(string_slice_test ${CONTAINER_SOURCES} ${STRING_SLICE_TEST_SOURCES})
 
 # Viertes ausführbares Programm erstellen
 add_executable(smart_ptr_test ${CONTAINER_SOURCES} ${SMART_PTR_TEST_SOURCES})
